@@ -1,0 +1,96 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+.nav-container{
+    display:flex;
+    width:100%;
+    height:40px;
+    padding: 10px;
+    align-items:center;
+    position: fixed;
+    background-color:white;  
+    box-shadow: 1px 2px #f7e2e2; 
+}
+.menu{
+    font-size: 20px;
+   border-color:transparent;
+   cursor: pointer;
+   
+}
+.menu-container{
+    margin-right: 10px;
+}
+.icon{
+    /* border:2px solid; */
+    border-radius: 50%;
+    width:60px;
+    height:60px;
+   
+}
+.QuickMemo{
+   margin-right: 150px;
+}
+.Search{
+    width: 500px;
+    height:45px;
+    text-align: center;
+    border-radius: 5px;
+   
+}
+.search-container{
+    margin-right:0px;
+}
+.search-btc{
+    height:45px;
+    width: 90px;
+    background-color: #D4CE50;
+    border-radius: 5px;
+    border-color: transparent;
+    cursor: pointer;
+}
+.btc-search{
+    margin-left: 0px;
+    margin-right: 200px;
+}
+.setting{
+    width:30px;
+    height:30px;
+    cursor:pointer;
+
+}
+.setting-container{
+   margin-right: 30px;
+}
+.profile{
+    display: inline-block;
+    background-color: #FF666E;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 29px;
+    line-height: 45px; /* set to same size as width, height */
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    cursor: pointer;
+   
+}
+.hr1{
+    margin-bottom: 70px;
+}
+
+/*  main*/
+.main-Container{
+ 
+}
+.tagline{
+    
+}
+
