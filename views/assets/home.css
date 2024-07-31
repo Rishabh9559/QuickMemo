@@ -3,11 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
-body,
-html {
+body, html {
     font-family: "Work Sans", "Noto Sans", sans-serif;
     width: 100%;
     height: 100%;
@@ -116,99 +114,81 @@ a {
 }
 
 
+/* main */
 
-
-
-/* Main Content Styles */
-.main-Container {
-    text-align: center;
-    padding: 100px 20px 50px 20px;
-    margin: 100px 250px 200px 250px ;
-    border-radius: 10px;
-    border: 2px solid #f7cb45e5;
-    background-color: #f7f6e6;
-    
-    
-}
-
-
-.tagline h2 {
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.tagline h3 {
-    font-size: 25px;
-    padding-top: 20px;
-}
-
-.login {
-    margin-top: 40px;
-}
-
-.login-form {
+.main-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 80px;
     padding: 20px;
-    border-radius: 5px;
-    max-width: 400px;
-    margin: 0 auto;
 }
 
-.login-email,
-.login-password {
-    margin-bottom: 15px;
+aside {
+    width: 200px;
+    padding: 20px;
+    background-color: #fff;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
-.email,
-.password {
-    width: 100%;
-    padding: 12px;
-    border-radius: 5px;
-    /* border: 1px solid #ccc; */
+aside nav ul {
+    list-style: none;
+}
+
+aside nav ul li {
+    margin: 20px 0;
+}
+
+aside nav ul li a {
+    color: #000;
     font-size: 18px;
+}
+
+
+
+.takeNotes-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.takeNotes-container input {
+    flex: 1;
+    border: none;
     outline: none;
-}
-
-.Continue {
-    margin-top: 20px;
-}
-
-.login {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-}
-
-.login-continue {
-    background-color: #ebe451;
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-}
-
-
-.google-login {
-    margin-top: 20px;
-}
-
-.btc-googlel-login {
-    padding: 10px 20px;
-    border-radius: 10px;
-    border: none;
-    background-color: #ebe451;
-    color: rgb(81, 52, 52);
-    cursor: pointer;
-    /* transition: background-color 0.3s ease; */
+    padding: 10px;
+    font-size: 18px;
 }
 
 
 
+.notes-conatiner{
+    display:flex;
+    justify-content: space-around;
+   gap: 10px;
+   
+    
+}
 
+ .notes-show {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: justify;
 
+  
+   
+    
+}
 
-/* Responsive Design */
+.recent-container{
+    background-color: #fff;
+    padding: 20px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+    margin-bottom: 20px;
+}
 
 
 @media (max-width: 1200px) {
@@ -219,38 +199,29 @@ a {
     .Search:focus {
         width: 300px;
     }
-    .main-Container{
-        margin: 100px 200px 100px 200px ;
-    }
 }
 
 @media (max-width: 769px) {
     .nav-container {
-        /* flex-direction: column;  */
         align-items: flex-start;
     }
-    .main-Container{
-        margin: 50px 100px 50px 100px ;
+
+    .main-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    .notes-section {
+        margin-left: 0;
     }
 
     .icon {
         width: 40px;
         height: 40px;
-    }
-
-    .search-container,
-    .btc-search {
-        flex: 1;
-
-    }
-
-    .QuickMemo {
-        margin-right: 0;
-    }
-
-    .btc-search {
-        margin-left: 0;
-        margin-top: 10px;
     }
 
     .search-container {
@@ -270,30 +241,6 @@ a {
     }
 
     .Search:focus {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .tagline h2 {
-        font-size: 24px;
-    }
-
-    .tagline h3 {
-        font-size: 18px;
-    }
-
-    .login-form {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .login-form input {
-        width: 100%;
-    }
-
-    .search-btc,
-    .btc-googlel-login {
         width: 100%;
     }
 }
