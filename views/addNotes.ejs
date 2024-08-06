@@ -1,0 +1,78 @@
+<html>
+
+<head>
+    <title>QuickMemo</title>
+    <link href="/public/addNotes.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="menu-container">
+                <button class="menu" type="menu">&#9776;</button>
+            </div>
+            <div class="Logo">
+                <img class="icon" src="/public/logo.png" alt="QuickMemo">
+            </div>
+            <div class="QuickMemo">
+                
+                    <h1>QuickMemo</h1>
+            
+            </div>
+            <div class="search-container">
+                <input class="Search" type="search" placeholder="Search your notes" spellcheck="true">
+                <button class="search-btc" id="">Search</button>
+            </div>
+            <div class="setting-container">
+                <img class="setting" src="/public/image.png">
+            </div>
+            <div class="profile-container">
+                <h1 class="profile">R</h1>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main>
+        <div>
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="/views/home.ejs">Notes</a></li>
+                    <li><a href="#">Reminders</a></li>
+                    <li><a href="#">Archive</a></li>
+                    <li><a href="#">Trash</a></li>
+                </ul>
+            </div>
+
+            <div class="editer-container">
+
+                <form action="/addNotes" method="post">
+
+                    <div class="text-editer">
+                        <div><button type="submit">Save</button></div>
+                        <div>
+                            <h1>Note</h1>
+                        </div>
+                        <div><input type="text" placeholder="Title" name="heading"></div>
+                        <div><input type="text" placeholder="Note" name="note"></div>
+                        <div><img src=""></div>
+                        <div><video src=""></video></div>
+                        <div><audio src=""></audio></div>
+                    </div>
+                    <div class="option">
+                        <div><input type="button" value="Add Image"></div>
+                        <div><input type="button" value="Add Video"></div>
+                        <div><input type="button" value="Add Audio"></div>
+                        <div><input type="button" value="Change color"></div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="blank">
+
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
