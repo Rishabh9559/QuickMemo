@@ -1,10 +1,6 @@
 const mongoose=require("mongoose");
 
-const DataSchema =new mongoose.Schema({
-    Email:{
-        type:String,
-        require:true,
-    },
+const DataSchema = new mongoose.Schema({
     Heading:{
         type:String,
         require:true,
@@ -14,6 +10,8 @@ const DataSchema =new mongoose.Schema({
         require:true,
     },
 });
+// calling email form app.js used into dataschema name
+let email=require("../App");
 
-const DataUser=mongoose.model("DataUser",DataSchema);
+const DataUser=mongoose.model(email,DataSchema);
 module.exports=DataUser;
