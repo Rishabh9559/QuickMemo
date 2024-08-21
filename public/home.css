@@ -68,9 +68,14 @@ a {
     border: 1px solid #ccc;
     outline: none;
     padding: 0 10px;
-    transition: width 0.3s ease;
+   
     margin-left: 50px;
     justify-content: center;
+}
+/* finding  */
+.highlight{
+    background-color: yellow;
+    font-weight: bold;
 }
 
 .Search:focus {

@@ -20,8 +20,8 @@
                 </a>
             </div>
             <div class="search-container">
-                <input class="Search" type="search" placeholder="Search your notes" spellcheck="true">
-                <button class="search-btc" id="btcSearch">Search</button>
+                <input class="Search" id="searchInput"  placeholder="Search your notes" spellcheck="true">
+                <button class="search-btc" onclick="searchText()">Search</button>
             </div>
             <div class="setting-container">
                 <img class="setting" src="/public/image.png">
@@ -59,7 +59,7 @@
 
 
                 <% if (notesData!="" ) { %>
-                    <div class="notes-conatiner">
+                    <div class="notes-conatiner" id="content">
                         <% notesData.forEach((row,index)=> { %>
 
                             <div class="notes-show">
@@ -68,7 +68,7 @@
                                     <thead>
                                         <tr>
                                             <th>
-                                                <%=row.Heading %>
+                                                <%=row.Heading %> 
                                             </th>
                                         </tr>
                                     </thead>
@@ -82,6 +82,7 @@
                                 </table>
 
                             </div>
+
                             <% }) %>
                     </div>
 
@@ -91,6 +92,7 @@
             </section>
         </div>
     </main>
+    <script src="/public/home.js"></script>
 </body>
 
 </html>

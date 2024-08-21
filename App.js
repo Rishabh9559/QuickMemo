@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const UserModel = require("./models/User");
 
+
 const app = express();
 
 // databse connection mongoosedb
@@ -20,6 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // css file use
 app.use("/public", express.static("public"));
+
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // get for index
 app.get("/", (req, res) => {
@@ -42,7 +45,7 @@ app.post("/", async (req, res) => {
     // check exixting user
     const existingUser = await UserModel.findOne({ Email: email });
     if (existingUser) {
-      res.render("index");
+      res.render("login");
       return res.status(400).json({ message: "User already exists" });
     } else {
       const user = await UserModel.create({
