@@ -21,7 +21,7 @@
             </div>
             <div class="search-container">
                 <input class="Search" type="search" placeholder="Search your notes" spellcheck="true">
-                <button class="search-btc" id="">Search</button>
+                <button class="search-btc" id="btcSearch">Search</button>
             </div>
             <div class="setting-container">
                 <img class="setting" src="/public/image.png">
@@ -48,31 +48,45 @@
             </aside>
             <section class="notes-section">
                 <div class="takeNotes-container">
-                    
-                   <a href="addNotes"> <input type="text" placeholder="Take a Notess ...."> </a>
+
+                    <a href="#"> <input type="text" placeholder="Take a Notess ...."> </a>
                 </div>
 
-                <div class="recent-container">
-                    <h1 >Recent Notes</h1>
+                <div class="recent">
+                    <h1>Recent Notes</h1>
                 </div>
 
-                <div  class="notes-conatiner">
-                    <div class="notes-show">
-                    <table >
-                        <thead>
-                            <tr>
-                                <th>Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                    
-                </div>
+
+
+                <% if (notesData!="" ) { %>
+                    <div class="notes-conatiner">
+                        <% notesData.forEach((row,index)=> { %>
+
+                            <div class="notes-show">
+
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <%=row.Heading %>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%=row.Note %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <% }) %>
+                    </div>
+
+                    <% } %>
+
 
             </section>
         </div>

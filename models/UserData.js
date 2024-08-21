@@ -11,7 +11,7 @@ const DataSchema = new mongoose.Schema({
     },
 });
 // calling email form app.js used into dataschema name
-let email=require("../App");
+const email=require("../App");
 
 const DataUser=mongoose.model(email,DataSchema);
 module.exports=DataUser;

@@ -29,21 +29,29 @@ app.get("/", (req, res) => {
 // for sinup
 app.post("/", async (req, res) => {
   try {
-    const email = req.body.Email;
-    console.log("Email is " + email);
+    const Inputemail = req.body.Email;
+    console.log("Email is " + Inputemail);
 
-    const user = await UserModel.create({
-      name: req.body.name,
-      Email: req.body.Email,
-      Password: req.body.Password,
-    });
+    // case change
+    function caseSmall(text) {
+      return text.toLowerCase();
+    }
+    const email = caseSmall(Inputemail);
 
-    if (user.name != null) {
-      res.render("login");
+
+    // check exixting user
+    const existingUser = await UserModel.findOne({ Email: email });
+    if (existingUser) {
+      res.render("index");
+      return res.status(400).json({ message: "User already exists" });
     } else {
-      app.get("/", (req, res) => {
-        res.render("index");
+      const user = await UserModel.create({
+        name: req.body.name,
+        Email: email,
+        Password: req.body.Password,
       });
+      await user.save();
+      res.render("login");
     }
   } catch (err) {
     console.log(err);
@@ -51,21 +59,33 @@ app.post("/", async (req, res) => {
 });
 
 // login
-
 app.post("/login", async (req, res) => {
   try {
-    // email
-    const email = req.body.Email;
+    
+    const Inputemail = req.body.Email;
+    console.log("Email is " + Inputemail);
 
-    console.log("login email :" + email);
+    // case change
+    function caseSmall(text) {
+      return text.toLowerCase();
+    }
+    const email = caseSmall(Inputemail);
 
     const user = await UserModel.findOne({ Email: email });
     console.log(user);
     if (user) {
       if (user.Password == req.body.Password) {
-        // export the variable other page to data base schema name
         module.exports = email;
-        res.render("addNotes");
+        // import the data structure schema
+        // notes fetch
+        const UserData2 = require("./models/UserData");
+
+        const NotesFetch = await UserData2.find();
+        console.log(NotesFetch);
+
+        res.render("addNotes", {
+          notesData: NotesFetch,
+        });
       } else {
         res.send("wrong password");
       }
@@ -75,35 +95,26 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
-// import the data structure schema
-const UserData = require("./models/UserData");
-
-//data fetch for notes
-
-// app.post("/home", async (req, res) => {
-//   // import the data structure schema
-//   const UserData = require("./models/UserData");
-
-//   const NotesFetch = await UserData.find();
-//   console.log(NotesFetch);
-
-// });
-
-
 //Insert Notes
 app.post("/addNotes", async (req, res) => {
-
+  const UserData = require("./models/UserData");
   const insertData = await UserData.create({
     Heading: req.body.heading,
     Note: req.body.note,
   });
+
   console.log("data store ");
-  res.render("home");
 
+  //notes fetch
+  const UserData2 = require("./models/UserData");
+
+  const NotesFetch = await UserData2.find();
+  console.log(NotesFetch);
+
+  res.render("home", {
+    notesData: NotesFetch,
+  });
 });
-
-
 
 app.listen(Port, () => {
   console.log("Server runing on port : http://localhost:" + Port);
