@@ -1,4 +1,4 @@
-// import the package
+
 const express = require("express");
 const Port = 3000;
 const mongoose = require("mongoose");
@@ -8,12 +8,12 @@ const UserModel = require("./models/User");
 
 const app = express();
 
-// databse connection mongoosedb
+
 mongoose.connect("mongodb://localhost:27017/QuickMomo").then(() => {
   console.log("Connect to DataBase");
 });
 
-// ejs stablised
+
 app.set("view engine", "ejs");
 
 // body html value taken
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // css file use
 app.use("/public", express.static("public"));
 
-// app.use(express.static(path.join(__dirname, 'public')));
+
 
 // get for index
 app.get("/", (req, res) => {
@@ -86,7 +86,7 @@ app.post("/login", async (req, res) => {
         const NotesFetch = await UserData2.find();
         console.log(NotesFetch);
 
-        res.render("home", {
+        res.render("addNotes", {
           notesData: NotesFetch,
         });
       } else {
@@ -97,6 +97,7 @@ app.post("/login", async (req, res) => {
     res.send("wrong");
   }
 });
+
 
 //Insert Notes
 app.post("/addNotes", async (req, res) => {
