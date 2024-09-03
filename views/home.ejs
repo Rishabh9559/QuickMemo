@@ -57,9 +57,9 @@
 
                 <div class="notes-show">
                     <div class="option">
-                        <a><img class="openImg" src="/public/open.png"></a>
-                        <a><img class="editImg" src="/public/edit.png"></a>
-                        <a><img src="/public/delete.png" class="deleteImg"></a>
+                        <a href="/views/updateNotes/<%= row._id  %>"><img class="openImg" src="/public/open.png"></a>
+                        <a href="/views/updateNotes/<%= row._id  %>"><img class="editImg" src="/public/edit.png"></a>
+                        <a href="/delete/<%= row._id  %>"><img src="/public/delete.png" class="deleteImg"></a>
                     </div>
 
                     <table>

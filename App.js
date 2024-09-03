@@ -1,18 +1,14 @@
-
 const express = require("express");
 const Port = 3000;
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const UserModel = require("./models/User");
 
-
 const app = express();
-
 
 mongoose.connect("mongodb://localhost:27017/QuickMomo").then(() => {
   console.log("Connect to DataBase");
 });
-
 
 app.set("view engine", "ejs");
 
@@ -21,8 +17,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // css file use
 app.use("/public", express.static("public"));
-
-
 
 // get for index
 app.get("/", (req, res) => {
@@ -40,7 +34,6 @@ app.post("/", async (req, res) => {
       return text.toLowerCase();
     }
     const email = caseSmall(Inputemail);
-
 
     // check exixting user
     const existingUser = await UserModel.findOne({ Email: email });
@@ -64,7 +57,6 @@ app.post("/", async (req, res) => {
 // login
 app.post("/login", async (req, res) => {
   try {
-    
     const Inputemail = req.body.Email;
     console.log("Email is " + Inputemail);
 
@@ -86,7 +78,7 @@ app.post("/login", async (req, res) => {
         const NotesFetch = await UserData2.find();
         console.log(NotesFetch);
 
-        res.render("addNotes", {
+        res.render("home", {
           notesData: NotesFetch,
         });
       } else {
@@ -97,7 +89,6 @@ app.post("/login", async (req, res) => {
     res.send("wrong");
   }
 });
-
 
 //Insert Notes
 app.post("/addNotes", async (req, res) => {
@@ -111,6 +102,22 @@ app.post("/addNotes", async (req, res) => {
 
   //notes fetch
   const UserData2 = require("./models/UserData");
+
+  const NotesFetch = await UserData2.find();
+  console.log(NotesFetch);
+
+  res.render("home", {
+    notesData: NotesFetch,
+  });
+});
+
+// /Delete data
+app.get("/delete/:id", async (req, res) => {
+  let id = req.params.id;
+  console.log("id is " + id);
+  const UserData2 = require("./models/UserData");
+  let de = await UserData2.findByIdAndDelete({ _id: id });
+  console.log("delete value " + de);
 
   const NotesFetch = await UserData2.find();
   console.log(NotesFetch);
