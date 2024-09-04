@@ -11,6 +11,7 @@
     "notes"
   ],
   "author": "Rishabh Kushwaha",
+  "Email":"Rishabhkushwaha@gmail.com",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",

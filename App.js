@@ -20,7 +20,7 @@ app.use("/public", express.static("public"));
 
 // get for index
 app.get("/", (req, res) => {
-  res.render("login");
+  res.render("index");
 });
 
 // for sinup
@@ -78,7 +78,7 @@ app.post("/login", async (req, res) => {
         const NotesFetch = await UserData2.find();
         console.log(NotesFetch);
 
-        res.render("home", {
+        res.render("addNotes", {
           notesData: NotesFetch,
         });
       } else {
