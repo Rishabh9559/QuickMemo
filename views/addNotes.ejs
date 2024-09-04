@@ -48,42 +48,43 @@
 
             <div class="addNotes">
                 <form action="addNotes" method="post">
-                <div class="save-container">
-                    <h1 class="rotated-symbol"><a> &#10170; </a></h1>
-                    <h1 class="save"><button type="submit"> &#10004; </button></h1>
-                </div>
-
-                <div class="headingBox">
-                    <input class="heading" name="heading" placeholder="Heading">
-                </div>
-                
-                <div class="form-container">
-                    <textarea id="note-input" name="note" class="note-input" placeholder="Write your Notes"></textarea>
-                </div>
-
-                <div class="option">
-                    <div class="Img-container">
-                        <input type="file" id="addImg" accept="image/*"><label for="addImg">Add Images</label>
-                    </div>
-                    <div class="video-container">
-                        <input type="file" id="addVideo" accept="video/*"><label for="addVideo">Add Video</label>
-                    </div>
-                    <div class="audio-container">
-                        <input type="file" id="addAudio" accept="audio/*"><label for="addAudio">Add Audio</label>
-                    </div>
-                    <div class="bgcolour" onclick="color()">
-                        <label id="color"   class="color">Color</label>
+                    <div class="save-container">
+                        <button type="menu" class="rotated-symbol"> &#10170; </button>
+                        <button type="submit" class="save"> &#10004; </button>
                     </div>
 
-                </div>
+                    <div class="headingBox">
+                        <input class="heading" name="heading" placeholder="Heading">
+                    </div>
 
-                <div class="color-select">
-                    <div id="select-color">
+                    <div class="form-container">
+                        <textarea id="note-input" name="note" class="note-input"
+                            placeholder="Write your Notes"></textarea>
+                    </div>
+
+                    <div class="option">
+                        <div class="Img-container">
+                            <input type="file" id="addImg" accept="image/*"><label for="addImg">Add Images</label>
+                        </div>
+                        <div class="video-container">
+                            <input type="file" id="addVideo" accept="video/*"><label for="addVideo">Add Video</label>
+                        </div>
+                        <div class="audio-container">
+                            <input type="file" id="addAudio" accept="audio/*"><label for="addAudio">Add Audio</label>
+                        </div>
+                        <div class="bgcolour" onclick="color()">
+                            <label id="color" class="color">Color</label>
+                        </div>
 
                     </div>
-                    <!-- <label class="chooseColor">Choose Colour</label> <input id="colorValue" class="colorValue" value='#fefefe' type="color" > -->
 
-                </div>
+                    <div class="color-select">
+                        <div id="select-color">
+
+                        </div>
+                        <!-- <label class="chooseColor">Choose Colour</label> <input id="colorValue" class="colorValue" value='#fefefe' type="color" > -->
+
+                    </div>
 
 
                 </form>

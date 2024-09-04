@@ -44,7 +44,7 @@
         </div>
 
         <div class="main-container">
-            <div class="addNoteBox"><a class="addnotes">Add Notes</a></div>
+            <div class="addNoteBox"><a href="/addNotes" class="addnotes">Add Notes</a></div>
             <div class="recent">
                 <h1>Recent Notes</h1>
             </div>
@@ -57,8 +57,8 @@
 
                 <div class="notes-show">
                     <div class="option">
-                        <a href="/views/updateNotes/<%= row._id  %>"><img class="openImg" src="/public/open.png"></a>
-                        <a href="/views/updateNotes/<%= row._id  %>"><img class="editImg" src="/public/edit.png"></a>
+                        <a href="/updateNotes/<%= row._id  %>"><img class="openImg" src="/public/open.png"></a>
+                        <a href="/updateNotes/<%= row._id  %>"><img class="editImg" src="/public/edit.png"></a>
                         <a href="/delete/<%= row._id  %>"><img src="/public/delete.png" class="deleteImg"></a>
                     </div>
 

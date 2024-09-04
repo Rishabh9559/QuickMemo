@@ -20,7 +20,7 @@ app.use("/public", express.static("public"));
 
 // get for index
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("login");
 });
 
 // for sinup
@@ -78,7 +78,7 @@ app.post("/login", async (req, res) => {
         const NotesFetch = await UserData2.find();
         console.log(NotesFetch);
 
-        res.render("addNotes", {
+        res.render("home", {
           notesData: NotesFetch,
         });
       } else {
@@ -89,6 +89,12 @@ app.post("/login", async (req, res) => {
     res.send("wrong");
   }
 });
+
+// addn Notes
+app.get("/addNotes",(req,res)=>{
+  res.render("addNotes");
+})
+
 
 //Insert Notes
 app.post("/addNotes", async (req, res) => {
@@ -113,7 +119,7 @@ app.post("/addNotes", async (req, res) => {
 
 // /Delete data
 app.get("/delete/:id", async (req, res) => {
-  let id = req.params.id;
+  const id = req.params.id;
   console.log("id is " + id);
   const UserData2 = require("./models/UserData");
   let de = await UserData2.findByIdAndDelete({ _id: id });
@@ -126,6 +132,41 @@ app.get("/delete/:id", async (req, res) => {
     notesData: NotesFetch,
   });
 });
+
+// update data - fetch data for update
+app.get("/updateNotes/:id", async (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  const UserData2 = require("./models/UserData");
+  let userData = await UserData2.findById({ _id: id });
+  if (userData != null) {
+    res.render("updateNotes", { userData: userData });
+  } else {
+    res.render("home");
+  }
+});
+
+// update and save
+app.post("/updateNotes/:id", async (req, res) => {
+  const id = req.params.id;
+  console.log("id update" + id);
+  const UserData2 = require("./models/UserData");
+  const userData = await UserData2.findByIdAndUpdate(
+    { _id: id },
+    { Heading: req.body.heading, Note: req.body.note }
+  );
+  console.log(userData);
+  if (userData) {
+    const NotesFetch = await UserData2.find();
+    console.log(NotesFetch);
+
+    res.render("home", {
+      notesData: NotesFetch,
+    });
+  }
+});
+
+
 
 app.listen(Port, () => {
   console.log("Server runing on port : http://localhost:" + Port);
