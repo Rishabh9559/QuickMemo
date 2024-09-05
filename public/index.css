@@ -22,7 +22,7 @@ a {
 /* Navigation Styles */
 .nav-container {
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     align-items: center;
     padding: 0px 20px;
     position: fixed;
@@ -48,6 +48,7 @@ a {
     background: none;
     cursor: pointer;
     margin-right: 20px;
+    display: none;
 
 }
 
@@ -73,6 +74,7 @@ a {
     transition: width 0.3s ease;
     margin-left: 50px;
     justify-content: center;
+    display: none;
 }
 
 .Search:focus {
@@ -86,7 +88,7 @@ a {
     border-radius: 5px;
     border: none;
     cursor: pointer;
-
+    display: none;
     transition: background-color 0.3s ease;
 }
 
@@ -99,6 +101,7 @@ a {
     height: 30px;
     cursor: pointer;
     margin-left: 20px;
+    display: none;
 }
 
 .profile {
@@ -113,6 +116,7 @@ a {
     text-align: center;
     cursor: pointer;
     margin-left: 10px;
+    display: none;
 }
 
 
@@ -123,7 +127,7 @@ a {
 .main-Container {
     text-align: center;
     padding: 100px 20px 50px 20px;
-    margin: 100px 250px 200px 250px ;
+    margin: 90px 250px 200px 250px ;
     border-radius: 10px;
     border: 2px solid #f7cb45e5;
     background-color: #f7f6e6;
@@ -139,11 +143,11 @@ a {
 
 .tagline h3 {
     font-size: 25px;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .login {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .login-form {
@@ -190,10 +194,13 @@ a {
 
 
 .google-login {
-    margin-top: 20px;
+    margin-top: 40px;
+
+    
 }
 
 .btc-googlel-login {
+    
     padding: 10px 20px;
     border-radius: 10px;
     border: none;

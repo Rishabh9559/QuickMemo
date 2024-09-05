@@ -20,7 +20,7 @@ app.use("/public", express.static("public"));
 
 // get for index
 app.get("/", (req, res) => {
-  res.render("login");
+  res.render("index");
 });
 
 // for sinup
@@ -53,6 +53,12 @@ app.post("/", async (req, res) => {
     console.log(err);
   }
 });
+
+// login click
+app.get("/login",(req,res)=>{
+  res.render("login");
+})
+
 
 // login
 app.post("/login", async (req, res) => {
@@ -90,7 +96,17 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// addn Notes
+// home page click
+app.get("/home", async(req,res)=>{
+  const UserData2 = require("./models/UserData");
+  const NotesFetch = await UserData2.find();
+  console.log(NotesFetch);
+  res.render("home", {
+    notesData: NotesFetch,
+  });
+})
+
+// add Notes click
 app.get("/addNotes",(req,res)=>{
   res.render("addNotes");
 })

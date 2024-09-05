@@ -32,14 +32,12 @@
                 <h1 class="profile">R</h1>
             </div>
 
-
         </div>
 
         <div class="nav-left">
             <ul>
-                <li><a href="#">Notes</a></li>
-                <li><a href="#">Reminders</a></li>
-                <li><a href="#">Archive</a></li>
+                <li><a href="/home">Notes</a></li>
+                <li><a href="/addNotes">Add Notes</a></li>
                 <li><a href="#">Trash</a></li>
             </ul>
         </div>
@@ -49,17 +47,17 @@
             <div class="addNotes">
                 <form action="addNotes" method="post">
                     <div class="save-container">
-                        <button type="menu" class="rotated-symbol"> &#10170; </button>
+                        <a href="/home" class="rotated-symbol"> &#10170; </a>
                         <button type="submit" class="save"> &#10004; </button>
                     </div>
 
                     <div class="headingBox">
-                        <input class="heading" name="heading" placeholder="Heading">
+                        <input class="heading" name="heading" placeholder="Heading" required>
                     </div>
 
                     <div class="form-container">
                         <textarea id="note-input" name="note" class="note-input"
-                            placeholder="Write your Notes"></textarea>
+                            placeholder="Write your Notes" required></textarea>
                     </div>
 
                     <div class="option">

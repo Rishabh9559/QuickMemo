@@ -37,9 +37,8 @@
 
         <div class="nav-left">
             <ul>
-                <li><a href="#">Notes</a></li>
-                <li><a href="#">Reminders</a></li>
-                <li><a href="#">Archive</a></li>
+                <li><a href="/home">Notes</a></li>
+                <li><a href="/addNotes">Add Notes</a></li>
                 <li><a href="#">Trash</a></li>
             </ul>
         </div>
@@ -50,7 +49,7 @@
 
                 <form action="/updateNotes/<%= userData._id %>" method="post">
                     <div class="save-container">
-                        <button type="menu" class="rotated-symbol"> &#10170; </button>
+                        <a href="/home" class="rotated-symbol"> &#10170; </a>
                         <button type="submit" class="save"> &#10004; </button>
                     </div>
 
