@@ -1,0 +1,162 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Poppins", sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation Styles */
+.nav-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.icon {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.QuickMemo h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-left: 15px;
+}
+
+/* Main Content Styles */
+.main-Container {
+    text-align: center;
+    padding: 100px 20px 50px 20px;
+    margin: 120px auto;
+    border-radius: 10px;
+    background-color: #ffffff;
+    max-width: 600px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tagline h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #3498db;
+}
+
+.tagline h3 {
+    font-size: 20px;
+    color: #7f8c8d;
+    margin-top: 10px;
+}
+
+.login {
+    margin-top: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-email,
+.login-password {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.email,
+.password {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.email:focus,
+.password:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.Continue {
+    margin-top: 20px;
+}
+
+.login-continue {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-continue:hover {
+    background-color: #2980b9;
+    box-shadow: 0 4px 12px rgba(41, 128, 185, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 769px) {
+    .main-Container {
+        margin: 50px auto;
+        padding: 50px 10px;
+    }
+
+    .tagline h2 {
+        font-size: 28px;
+    }
+
+    .tagline h3 {
+        font-size: 18px;
+    }
+
+    .login-form input {
+        width: 90%;
+    }
+
+    .login-continue {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-Container {
+        margin: 40px auto;
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tagline h2 {
+        font-size: 24px;
+    }
+
+    .tagline h3 {
+        font-size: 16px;
+    }
+}

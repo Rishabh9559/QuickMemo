@@ -1,0 +1,105 @@
+<html>
+
+<head>
+    <link href="/public/addNotes.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="header">
+            <div class="menu-container">
+                <button class="menu" type="menu">&#9776;</button>
+            </div>
+            <div class="Logo">
+                <img class="icon" src="/public/logo.png" alt="QuickMemo">
+            </div>
+            <div class="QuickMemo">
+                <a href="#">
+                    <h1>QuickMemo</h1>
+                </a>
+            </div>
+            <div class="search-container">
+                <input class="Search" id="searchInput" placeholder="Search your notes" spellcheck="true">
+            </div>
+            <button class="search-btc" onclick="searchText()">Search</button>
+
+            <div class="setting-container">
+            
+
+                <img src="/public/image.png" alt="Profile" class="setting" id="setting">
+                <div class="logoutcontainer" id="logoutContainer">
+                    <a href="/logout" id="logout-link" class="logout-link">Log Out</a>
+                </div>
+             </div>
+            
+
+
+        </div>
+
+        <div class="nav-left">
+            <ul>
+                <li><a href="/home">Notes</a></li>
+                <li><a href="/addNotes">Add Notes</a></li>
+             
+            </ul>
+        </div>
+
+        <div class="main-container">
+
+            <div class="addNotes">
+
+                <form action="/updateNotes/<%= userData._id %>" method="post">
+                    <div class="save-container">
+                        <a href="/home" class="rotated-symbol"> &#10170; </a>
+                        <button type="submit" class="save"> &#10004; </button>
+                    </div>
+
+                    <div class="headingBox">
+                        <input class="heading" name="heading" placeholder="Heading" value="<%= userData.Heading  %>">
+                    </div>
+
+                    <div class="form-container">
+                        <textarea id="note-input" name="note" class="note-input"
+                            placeholder="Write your Notes" ><%= userData.Note %></textarea>
+                    </div>
+
+                    <div class="option">
+                        <div class="Img-container">
+                            <input type="file" id="addImg" accept="image/*"><label for="addImg">Add Images</label>
+                        </div>
+                        <div class="video-container">
+                            <input type="file" id="addVideo" accept="video/*"><label for="addVideo">Add Video</label>
+                        </div>
+                        <div class="audio-container">
+                            <input type="file" id="addAudio" accept="audio/*"><label for="addAudio">Add Audio</label>
+                        </div>
+                        <div class="bgcolour" onclick="color()">
+                            <label id="color" class="color">Color</label>
+                        </div>
+
+                    </div>
+
+                    <div class="color-select">
+                        <div id="select-color">
+
+                        </div>
+                        <!-- <label class="chooseColor">Choose Colour</label> <input id="colorValue" class="colorValue" value='#fefefe' type="color" > -->
+
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script src="/public/addNotes.js">
+    </script>
+
+</body>
+
+</html>

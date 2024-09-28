@@ -1,0 +1,23 @@
+{
+  "name": "keep-notes",
+  "version": "1.0.0",
+  "description": "This is Keep Notes ,here user Edit , delete , Update and Add the text . here user keep there daily to-do list , any text information.",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "keep",
+    "notes"
+  ],
+  "author": "Rishabh Kushwaha",
+  "Email":"Rishabhkushwaha@gmail.com",
+  "GitHub ID":"rishabh9559",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.2"
+  }
+}

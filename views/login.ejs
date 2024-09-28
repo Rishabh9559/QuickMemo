@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="/public/login.css">
+</head>
+
+<body>
+    <header>
+        <div class="nav-container">
+
+            <div class="Logo">
+                <img class="icon" src="/public/logo.png" alt="QuickMemo">
+            </div>
+            <div class="QuickMemo">
+                <h1>QuickMemo</h1>
+             </div>
+
+        </div>
+    </header>
+    <hr class="hr1">
+
+    <!-- main body list -->
+
+
+
+    <div class="main-Container">
+        <div class="tagline">
+            <h2>The simple note-taking app</h2>
+            <h3 style="font-size: 25px; padding-top: 20px; ">Get Started</h3>
+        </div>
+
+        <div class="login">
+
+            <form  method="post" action="/login">
+              
+                <div class="login-form">
+   
+                    <div class="login-email">
+                        <input class="email" type="email" name="Email"  id="Email" placeholder="Email" required>
+                    </div>
+                    <div class="login-password">
+                        <input class="password" type="password" name="Password" id="Password"  placeholder="Password" required>
+                    </div>
+                </div>
+               
+                <div class="Continue">
+                    <button class="login-continue" id="login" >Log in</button>
+                </div>
+            </form>
+
+        </div>
+
+
+
+
+    </div>
+</body>
+
+</html>

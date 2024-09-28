@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <link href="/public/home.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        
+        <div class="header">
+            <div class="menu-container">
+                <button class="menu" type="menu">&#9776;</button>
+            </div>
+            <div class="Logo">
+                <img class="icon" src="/public/logo.png" alt="QuickMemo">
+            </div>
+            <div class="QuickMemo">
+                <a href="#">
+                    <h1>QuickMemo</h1>
+                </a>
+            </div>
+            <div class="search-container">
+                <input class="Search" id="searchInput" placeholder="Search your notes" spellcheck="true">
+            </div>
+            <button class="search-btc" onclick="searchText()">Search</button>
+            <div class="setting-container">
+            
+
+               <img src="/public/image.png" alt="Profile" class="setting" id="setting">
+               <div class="logoutcontainer" id="logoutContainer">
+                   <a href="/logout" id="logout-link" class="logout-link">Log Out</a>
+               </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="nav-left">
+            <ul>
+                <li><a href="/home">Notes</a></li>
+                <li><a href="/addNotes">Add Notes</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="main-container">
+            <div class="addNoteBox"><a href="/addNotes" class="addnotes">Add Notes</a></div>
+            <div class="recent">
+                <h1>Recent Notes</h1>
+            </div>
+
+
+
+            <% if (notesData!="" ) { %>
+            <div class="notes-conatiner" id="content">
+                <% notesData.forEach((row,index)=> { %>
+
+                <div class="notes-show">
+                    <div class="option">
+                        <a href="/updateNotes/<%= row._id  %>"><img class="openImg" src="/public/open.png"></a>
+                        <a href="/updateNotes/<%= row._id  %>"><img class="editImg" src="/public/edit.png"></a>
+                        <a href="/delete/<%= row._id %>" onclick="return confirm('Are you sure you want to delete this note?');"><img src="/public/delete.png" class="deleteImg"></a>
+
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    <%=row.Heading %> 
+                                    
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <%=row.Note %>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <% }) %>
+            </div>
+
+            <% } %>
+        </div>
+
+        <div class="nav-right">
+
+        </div>
+    </div>
+<script src="/public/home.js"></script>
+
+</body>
+
+</html>
